@@ -1,6 +1,0 @@
-# Omitir el archivo .gitingnore y la carpeta fotos
-.gitignore
-node_modules/
-input.css
-.json
-teste.html
