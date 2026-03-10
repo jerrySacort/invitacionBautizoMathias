@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Corona de Flores - Animación de Crecimiento</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #0d1b2a; /* fondo oscuro para que resalte el watercolor */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: system-ui, sans-serif;
+    }
+
+    .scene {
+      position: relative;
+      width: 700px;
+      height: 700px;
+    }
+
+    .flower-wreath {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transform: scale(0.3);
+      filter: brightness(0.9) contrast(1.1);
+      animation: growAndBloom 7s forwards ease-in-out;
+      pointer-events: none;
+    }
+
+    /* Capas extras para dar profundidad y movimiento sutil */
+    .layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: url('TU_IMAGEN_AQUI.png') center/contain no-repeat;
+      opacity: 0;
+      transform: scale(0.4) rotate(3deg);
+      animation: growAndBloom 8.5s forwards ease-out 0.6s;
+      filter: blur(1px) brightness(1.05);
+      mix-blend-mode: screen; /* da un glow sutil watercolor */
+    }
+
+    .layer:nth-child(2) {
+      animation-delay: 1.2s;
+      transform: scale(0.45) rotate(-4deg);
+      filter: blur(2px) brightness(0.95);
+    }
+
+    .layer:nth-child(3) {
+      animation-delay: 2s;
+      transform: scale(0.38) rotate(2deg);
+      filter: blur(1.5px);
+    }
+
+    @keyframes growAndBloom {
+      0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(60px);
+      }
+      20% {
+        opacity: 0.3;
+        transform: scale(0.6) translateY(20px);
+      }
+      50% {
+        opacity: 0.85;
+        transform: scale(0.95);
+      }
+      80% {
+        opacity: 1;
+        transform: scale(1.03);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    /* Pequeño movimiento orgánico al final */
+    @keyframes gentleSway {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      50%      { transform: rotate(1.2deg) translateY(-4px); }
+    }
+
+    .scene:hover .flower-wreath,
+    .scene:hover .layer {
+      animation: gentleSway 12s infinite ease-in-out;
+    }
+
+    h1 {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #c9d6ea;
+      font-size: 1.4rem;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scene">
+    <!-- Capa principal -->
+    <img src="./img/test.png" class="flower-wreath" alt="Corona de flores azul watercolor">
+
+    <!-- Capas duplicadas para efecto de profundidad watercolor -->
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+
+    <h1>Creciendo con calma...</h1>
+  </div>
+
+  <script>
+    // Opcional: reiniciar animación al hacer clic
+    document.querySelector('.scene').addEventListener('click', () => {
+      const elements = document.querySelectorAll('.flower-wreath, .layer');
+      elements.forEach(el => {
+        el.style.animation = 'none';
+        el.offsetHeight; // trigger reflow
+        el.style.animation = null;
+      });
+    });
+  </script>
+
+</body>
+</html>

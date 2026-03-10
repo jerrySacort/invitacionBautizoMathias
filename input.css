@@ -15,7 +15,7 @@ img{
   will-change:transform, opacity;
 }
 body {
-    background: var(--fondo);
+    background: radial-gradient(ellipse at bottom right, #00abb3, #3c4048, #b2b2b2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,7 +115,7 @@ body {
     width: 80px;
     height: 80px;
     /*background-color: var(--corazon);*/
-    background-image: url(./img/iconoAbrir.png);
+    background-image: url(../img/iconoAbrir.png);
     background-size: contain;
     /*transform: translate(-50%,0) !important;*/
     transition: transform 0.5s ease-in-out 1s;
@@ -173,6 +173,7 @@ body {
     /*height: 86vh;*/
     height: auto;
     top: -25vh;
+    background: radial-gradient(ellipse at bottom right, #d1d1d1, #c8e8ed, #f7fdb1);
 }
 /*ANIMACIONES*/
 .elegante{
@@ -262,6 +263,9 @@ body {
 /*Vista celular*/
 
 @media screen and (max-width:430px) {
+    body{
+        background: linear-gradient(to bottom, #f0d78c, #fcfafa, #64c4ed);
+    }
     .contenedor {
         width: 100%;
         padding: 0.2rem;
