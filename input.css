@@ -262,7 +262,13 @@ body {
 
 /*Vista celular*/
 
-/*@media screen and (max-width:430px) {*/
+@media (min-width: 360px) and (max-width: 430px) {
+    .sobre::before {
+         border-top:150px solid var(--solapa-sobre) ;
+        border-right: 175px solid transparent !important;
+        border-left: 175px solid transparent !important;
+    }
+}
 @media (max-width: 600px) {
     body{
         background: linear-gradient(to bottom, #f0d78c, #fcfafa, #64c4ed);
