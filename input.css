@@ -262,7 +262,8 @@ body {
 
 /*Vista celular*/
 
-@media screen and (max-width:430px) {
+/*@media screen and (max-width:430px) {*/
+@media (max-width: 600px) {
     body{
         background: linear-gradient(to bottom, #f0d78c, #fcfafa, #64c4ed);
     }
