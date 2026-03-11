@@ -4,6 +4,7 @@ const btnAbrirSobre = document.querySelector(".corazon");
 const floresIzquierda = document.querySelector(".floresIzquierda");
 const floresDerecha = document.querySelector(".floresDerecha");
 const coronaFlores = document.querySelector(".coronaFlores");
+const btnCerrarCarta = document.querySelector(".btnCerrar")
 
 new WOW().init();
 
@@ -14,16 +15,17 @@ document.addEventListener("click", (e) => {
         e.target.matches(".corazon")) {
         envoltura.classList.toggle("abierto");
         envoltura.classList.add("desactivar-sobre")
+        
         /*QUITAR ANIMACION DE SOBRE*/
         envoltura.classList.remove("animate__animated", "animate__infinite", "animate__tada");
         if (!carta.classList.contains("abierta")) {
            
             setTimeout(() => {
                 carta.classList.add("mostrar-carta");
-                
                 setTimeout(() => {
                     carta.classList.remove("mostrar-carta");
                     carta.classList.add("abierta");
+                    btnCerrarCarta.classList.remove("hidden");
                     /*floresIzquierda.classList.add("animate__animated","animate__fadeInLeft","animate__delay-1s");
                     floresDerecha.classList.add("animate__animated","animate__fadeInRight","animate__delay-1s");
                     coronaFlores.classList.add("animate__animated","animate__zoomIn","animate__delay-1s");*/
@@ -31,9 +33,10 @@ document.addEventListener("click", (e) => {
                 }, 500);
             }, 1000);
         }
-    } else if (e.target.matches(".envoltura-sobre *")) {
+    } else if (e.target.matches(".btnCerrar *")) {
         envoltura.classList.remove("abierto");
         envoltura.classList.remove("desactivar-sobre")
+        btnCerrarCarta.classList.add("hidden");
         if (carta.classList.contains("abierta")) {
             carta.classList.add("cerrando-carta");
             setTimeout(() => {
@@ -48,6 +51,12 @@ document.addEventListener("click", (e) => {
                 envoltura.classList.add("animate__animated","animate__infinite","animate__tada");
             }, 1000);
         }
+    }else if(e.target.matches(".linkIglesia *")){
+        const linkIglesia = "https://maps.app.goo.gl/uzMTPkEeFvT6oEWC9";
+        window.open(linkIglesia, "_blank");
+    }else if(e.target.matches(".linkTerraza *")){
+        const linkTerraza = "https://maps.app.goo.gl/Bmix81NYKhDxmCcu6";
+        window.open(linkTerraza, "_blank");
     }
 })
 

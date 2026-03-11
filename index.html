@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/particulas/particulas.css">
     <link rel="stylesheet" href="./css/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+
 
     <title>Hola soy Mathias ❤️</title>
     <meta property="og:title" content="Hola soy Mathias ❤️ y te envito a mi bautizo">
@@ -59,7 +61,7 @@
                             </div>
                         </div>
                         <div class="grid grid-cols-1 grid-rows-2 gap-4 pb-18">
-                            <div class="grid grid-cols-8 gap-4">
+                            <div class="grid grid-cols-8 gap-4 linkIglesia cursor-pointer" data-tooltip-target="tooltip-iglesia">
                                 <div class="col-span-1 flex justify-center items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="#9c7a3a" width="25px" height="25px" viewBox="0 0 512 512">
                                         <path d="M280-8c0-13.3-10.7-24-24-24S232-21.3 232-8l0 24-32 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l32 0 0 48-98.6 65.8C120 186.7 112 201.6 112 217.7l0 38.3-79.8 45.6C12.3 313 0 334.2 0 357.1L0 448c0 35.3 28.7 64 64 64 74.7 0 85.4 0 320 0l64 0c35.3 0 64-28.7 64-64l0-90.9c0-23-12.3-44.2-32.2-55.6L400 256 400 217.7c0-16-8-31-21.4-39.9l-98.6-65.8 0-48 32 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-32 0 0-24zM256 320c35.3 0 64 28.7 64 64l0 80-128 0 0-80c0-35.3 28.7-64 64-64z"></path>
@@ -70,7 +72,7 @@
                                     <p class="text-sm direccion font-bold">Av. Palmeras Esq. Av. Tuzania s/n, La Tuzania, 45138 Zapopan, Jal.</p>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-8 gap-4">
+                            <div class="grid grid-cols-8 gap-4 linkTerraza cursor-pointer" data-tooltip-target="tooltip-terraza">
                                 <div class="col-span-1 flex justify-center items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="#9c7a3a" width="25px" height="25px" viewBox="0 0 640 512">
                                         <path d="M155.6 17.3C163 3 179.9-3.6 195 1.9l125 45.6 125-45.6c15.1-5.5 32 1.1 39.4 15.4l78.8 152.9c28.8 55.8 10.3 122.3-38.5 156.6l31.3 86.2 41-15c16.6-6 35 2.5 41 19.1s-2.5 35-19.1 41c-47.4 17.3-94.8 34.5-142.2 51.8-16.6 6.1-35-2.5-41-19.1s2.5-35 19.1-41l41-15-31.3-86.2c-59.4 5.2-116.2-33.9-130-95.2l-14.6-64.7-14.6 64.7c-13.8 61.3-70.6 100.4-130 95.2l-31.3 86.2 41 15c16.6 6.1 25.2 24.4 19.1 41s-24.4 25.2-41 19.1c-47.4-17.3-94.8-34.6-142.2-51.8-16.6-6.1-25.2-24.4-19.1-41S26.3 392 42.9 398l41 15 31.3-86.2C66.5 292.5 48.1 226 76.9 170.2L155.6 17.3zm44 54.4l-27.2 52.8 89.2 32.5 13.1-57.9-75.1-27.4zm240.9 0l-75.1 27.4 13.1 57.9 89.2-32.5-27.2-52.8z"/>
@@ -81,10 +83,26 @@
                                     <p class="text-sm direccion font-bold">Encino 16, 45012 Nuevo México, Jal.</p>
                                 </div>
                             </div>
+                            <div id="tooltip-iglesia" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-black rounded-base shadow-xs opacity-0 tooltip">
+                                Ver ubicación de la Iglesia.
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                            <div id="tooltip-terraza" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-black rounded-base shadow-xs opacity-0 tooltip">
+                                Ver ubicación de la terraza.
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
                         </div>
                     </div>
                     <div class="pieDePagina">
+                        
                         <img src="./img/pieDePagina.png" alt="">
+                    </div>
+                    <div class="absolute flex justify-center items-center z-50 w-full bottom-16 left-0">
+                        <button type="button" class="btnCerrar rounded-full z-50 bg-white/30 backdrop-blur-md shadow-lg w-8 h-8 flex justify-center items-center cursor-pointer hidden">
+                            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="#003049">
+                                <path d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -97,7 +115,10 @@
     </div>
     <div class="contenedorParticulas1"></div>
     <!-- <script src="script_v2.js"></script> -->
+     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
      <script src="./js/WOW.js"></script>
      <script src="./js/script._v1.js"></script>
      <script src="./css/particulas/particulas.js"></script>
+    
+
 </body>
