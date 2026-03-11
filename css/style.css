@@ -521,9 +521,8 @@ body {
 .corazon {
   position: absolute;
   top: 42%;
-  left: 43%;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background-image: url(../img/iconoAbrir.png);
   background-size: contain;
   transition: transform 0.5s ease-in-out 1s;
