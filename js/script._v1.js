@@ -4,9 +4,9 @@ const btnAbrirSobre = document.querySelector(".corazon");
 const floresIzquierda = document.querySelector(".floresIzquierda");
 const floresDerecha = document.querySelector(".floresDerecha");
 const coronaFlores = document.querySelector(".coronaFlores");
+const titulo = document.querySelector(".titulo");
+const titulo2 = document.querySelector(".titulo2");
 const btnCerrarCarta = document.querySelector(".btnCerrar")
-
-new WOW().init();
 
 document.addEventListener("click", (e) => {
     if (e.target.matches(".sobre") || 
@@ -26,9 +26,19 @@ document.addEventListener("click", (e) => {
                     carta.classList.remove("mostrar-carta");
                     carta.classList.add("abierta");
                     btnCerrarCarta.classList.remove("hidden");
-                    /*floresIzquierda.classList.add("animate__animated","animate__fadeInLeft","animate__delay-1s");
-                    floresDerecha.classList.add("animate__animated","animate__fadeInRight","animate__delay-1s");
-                    coronaFlores.classList.add("animate__animated","animate__zoomIn","animate__delay-1s");*/
+                    setTimeout(function(){
+                        animaciones();
+                        
+
+                    },500);
+
+                    floresIzquierda.classList.add("wow","animate__animated","animate__zoomInLeft");
+                    floresDerecha.classList.add("wow","animate__animated","animate__zoomInRight");
+                    coronaFlores.classList.add("wow","animate__animated","animate__zoomIn");
+                    titulo.classList.add("wow","animate__animated","animate__backInDown");
+                    titulo2.classList.add("wow","fadeInUp");
+                    titulo2.classList.add("wow","animate__animated","animate__backInDown");
+
                     
                 }, 500);
             }, 1000);
@@ -69,7 +79,7 @@ const animaciones = () => {
 
             const animacion = el.dataset.animacion;
 
-            el.classList.add("animate__animated", animacion);
+            el.classList.add("wow", animacion);
 
         }, index * 500); // efecto uno tras otro
 

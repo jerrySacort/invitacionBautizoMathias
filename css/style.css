@@ -442,6 +442,7 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  overflow-x: hidden;
 }
 .contenedor {
   width: 500px;
