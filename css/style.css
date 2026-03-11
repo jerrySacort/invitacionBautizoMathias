@@ -347,6 +347,9 @@
   .text-left {
     text-align: left;
   }
+  .font-\[\'Raleway\'\] {
+    font-family: 'Raleway';
+  }
   .font-\[Raleway\] {
     font-family: Raleway;
   }
@@ -709,10 +712,6 @@ body {
   color: rgb(201, 168, 76);
   font-family: Raleway;
   opacity: 1;
-}
-.iconoIglesia {
-  width: 10vh;
-  height: 10vh;
 }
 .tituloDireccion {
   font-family: Raleway;
